@@ -21,8 +21,8 @@
   },
   "author": "Michael Wieczorek",
   "license": "MIT",
-  "types": "index.d.ts",
   "main": "lib/index.js",
+  "access": "public",
   "jest": {
     "moduleFileExtensions": [
       "js",
