@@ -1,0 +1,9 @@
+.eslintrc.cjs
+.gitignore
+src
+test
+dts.config.json
+fixup.js
+ts*.json
+*.js.map
+*.ts.map
