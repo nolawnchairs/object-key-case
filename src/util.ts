@@ -22,7 +22,7 @@ export function isSnakeCase(str: string): boolean {
   return /^[a-z][a-z0-9_]*$/.test(str)
 }
 
-export function isKvObject(obj: any): obj is Record<string, unknown> {
+export function isKvObject(obj: unknown): obj is Record<string, unknown> {
   return !!obj && typeof obj === 'object'
     && !Array.isArray(obj)
     && Object.getOwnPropertyNames(obj).every(key => typeof key === 'string')
