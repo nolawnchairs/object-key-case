@@ -22,7 +22,9 @@
   "author": "Michael Wieczorek",
   "license": "MIT",
   "main": "lib/index.js",
-  "access": "public",
+  "publishConfig": {
+    "access": "public"
+  },
   "jest": {
     "moduleFileExtensions": [
       "js",
