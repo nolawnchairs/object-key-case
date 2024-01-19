@@ -17,5 +17,6 @@ describe('utilities', () => {
     expect(isKvObject(true)).toBe(false)
     expect(isKvObject(null)).toBe(false)
     expect(isKvObject(undefined)).toBe(false)
+    expect(isKvObject(new Date())).toBe(false)
   })
 })

@@ -114,5 +114,48 @@ describe('case covnersion', () => {
       },
     })
   })
+
+  it('should retain date objects', () => {
+    const result = convertObject(new KeyConversionContext('camel'), {
+      'id': 'cb32a8c0-2f1c-4e6e-8b2a-5d5e6b7b8b1e',
+      'title': 'My First Post',
+      'likes_count': 42,
+      'comments_count': 2,
+      'created_at': new Date('2021-01-01T00:00:00.000Z'),
+      'author': {
+        'id': 'b0b0b0b0-b0b0-b0b0-b0b0-b0b0b0b0b0b0',
+        'first_name': 'John',
+        'last_name': 'Doe',
+        'flags': [
+          'verified',
+          'admin',
+        ],
+        'comments': [
+          { 'id': 'c1', 'body_text': 'First comment' },
+          { 'id': 'c2', 'body_text': 'Second comment' },
+        ],
+      },
+    })
+    expect(result).toEqual({
+      'id': 'cb32a8c0-2f1c-4e6e-8b2a-5d5e6b7b8b1e',
+      'title': 'My First Post',
+      'likesCount': 42,
+      'commentsCount': 2,
+      'createdAt': new Date('2021-01-01T00:00:00.000Z'),
+      'author': {
+        'id': 'b0b0b0b0-b0b0-b0b0-b0b0-b0b0b0b0b0b0',
+        'firstName': 'John',
+        'lastName': 'Doe',
+        'flags': [
+          'verified',
+          'admin',
+        ],
+        'comments': [
+          { 'id': 'c1', 'bodyText': 'First comment' },
+          { 'id': 'c2', 'bodyText': 'Second comment' },
+        ],
+      },
+    })
+  })
 })
 

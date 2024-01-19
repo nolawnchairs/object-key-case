@@ -24,6 +24,7 @@ export function isSnakeCase(str: string): boolean {
 
 export function isKvObject(obj: unknown): obj is Record<string, unknown> {
   return !!obj && typeof obj === 'object'
+    && !(obj instanceof Date)
     && !Array.isArray(obj)
     && Object.getOwnPropertyNames(obj).every(key => typeof key === 'string')
 }
